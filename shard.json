@@ -1,0 +1,281 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "maxLength": 50,
+      "pattern": "^(?!.*crystal)[a-z][a-z0-9_-]*[a-z0-9]$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(-[a-zA-Z0-9.]+)?$"
+    },
+    "crystal": {
+      "type": "string"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "git": {
+            "type": "string"
+          },
+          "github": {
+            "type": "string"
+          },
+          "gitlab": {
+            "type": "string"
+          },
+          "bitbucket": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "tag": {
+            "type": "string"
+          },
+          "branch": {
+            "type": "string"
+          },
+          "commit": {
+            "type": "string"
+          },
+          "bookmark": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "git",
+          "github",
+          "gitlab",
+          "bitbucket",
+          "path"
+        ],
+        "oneOf": [
+          {
+            "required": [
+              "git"
+            ]
+          },
+          {
+            "required": [
+              "github"
+            ]
+          },
+          {
+            "required": [
+              "gitlab"
+            ]
+          },
+          {
+            "required": [
+              "bitbucket"
+            ]
+          },
+          {
+            "required": [
+              "path"
+            ]
+          }
+        ]
+      }
+    },
+    "development_dependencies": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "git": {
+            "type": "string"
+          },
+          "github": {
+            "type": "string"
+          },
+          "gitlab": {
+            "type": "string"
+          },
+          "bitbucket": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "tag": {
+            "type": "string"
+          },
+          "branch": {
+            "type": "string"
+          },
+          "commit": {
+            "type": "string"
+          },
+          "bookmark": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "git",
+          "github",
+          "gitlab",
+          "bitbucket",
+          "path"
+        ],
+        "oneOf": [
+          {
+            "required": [
+              "git"
+            ]
+          },
+          {
+            "required": [
+              "github"
+            ]
+          },
+          {
+            "required": [
+              "gitlab"
+            ]
+          },
+          {
+            "required": [
+              "bitbucket"
+            ]
+          },
+          {
+            "required": [
+              "path"
+            ]
+          }
+        ]
+      }
+    },
+    "description": {
+      "type": "string"
+    },
+    "documentation": {
+      "type": "string"
+    },
+    "executables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri"
+    },
+    "libraries": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "git": {
+            "type": "string"
+          },
+          "github": {
+            "type": "string"
+          },
+          "gitlab": {
+            "type": "string"
+          },
+          "bitbucket": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "tag": {
+            "type": "string"
+          },
+          "branch": {
+            "type": "string"
+          },
+          "commit": {
+            "type": "string"
+          },
+          "bookmark": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "git",
+          "github",
+          "gitlab",
+          "bitbucket",
+          "path"
+        ],
+        "oneOf": [
+          {
+            "required": [
+              "git"
+            ]
+          },
+          {
+            "required": [
+              "github"
+            ]
+          },
+          {
+            "required": [
+              "gitlab"
+            ]
+          },
+          {
+            "required": [
+              "bitbucket"
+            ]
+          },
+          {
+            "required": [
+              "path"
+            ]
+          }
+        ]
+      }
+    },
+    "license": {
+      "type": "string"
+    },
+    "repository": {
+      "type": "string"
+    },
+    "scripts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "main": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "version"
+  ]
+}
